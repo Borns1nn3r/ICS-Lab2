@@ -2,7 +2,9 @@
 
 验证日期：2026-10-25。环境：Windows 上的 WSL Ubuntu，Linux x86_64，GCC、GDB、GNU binutils、Python 3。
 
-## 分析方法
+## 分析方法与工具使用声明
+
+本报告及 `defuser.c` 由 Codex 根据本人的个人炸弹反汇编协助生成，编译、GDB 数据查看和测试也由 Codex 在本机执行。以下是对实际程序的分析及实测记录，不表示本人已经独立完成全部推导或复核；提交前应逐项理解、复核，并依据课程对 AI 使用的规定处理。本报告没有使用其他同学的代码或答案。
 
 只实现 `defuser.c`，没有修改个人炸弹、公共接口、驱动、测试程序和工作流。GDB 仅用于读取内存中的数据表，没有修改寄存器或内存来绕过检查。解法只进行内存中的计算和 `snprintf` 格式化，不读取文件、不访问网络、不启动进程，也没有内联汇编。
 
@@ -212,3 +214,4 @@ make
 - [课程官方 BombLab 文档](https://ics-26fall-fdu.github.io/labs/lab2-bomb-lab/)：接口、提交格式、Honor 触发方式及运算宽度要求。
 - [官方学生模板](https://github.com/ICS-26Fall-FDU/BombLab)：`defuser.h`、`defuser_main.c`、`challenge.c`、`public_test.py` 和 tutor 教学。
 - 个人 `bomb` 的 `objdump` 反汇编和 GDB 只读数据检查：本报告中个人常量、跳转表和节点布局的直接依据。
+- Codex：协助恢复计算关系、编写代码、执行验证、整理本报告与运行记录图片；使用情况已在开头披露。
